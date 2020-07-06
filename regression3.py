@@ -20,8 +20,9 @@ def run():
 
     for i, param in enumerate(net.parameters()):
         print('param: {}'.format(param))
-        if i <= 1:
-            param.requires_grad = False
+        param.requires_grad = False
+        if i > 1:
+            break
 
     hidden_values = net.get_hidden(x_t)
     print('hidden_values: {}'.format(hidden_values))
